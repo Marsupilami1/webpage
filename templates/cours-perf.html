@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Webpage">
+    <title>Martin Andrieux</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
+</head>
+
+<body class="bg-taupe-50 text-black font-display">
+    <header>
+        <div class="flex place-content-center items-center">
+            <img src="static/cliff.png" alt="Picture not found"
+                class="w-40 h-40 m-5 mr-20 shadow-xl border-2 duration-300 ease-out hover:rounded-[calc(20*var(--spacing))] hover:scale-115" />
+            <div class="flex-col">
+                <h1 class="text-7xl font-bold">Cours Perf VOL</h1>
+                <h2 class="text-3xl">Quelques resources pour progreser</h2>
+            </div>
+        </div>
+
+        <div class="fixed inset-y-0 left-0 bg-orange-100 w-xs shadow-lg text-xl">
+            <div class="flex flex-col gap-y-3 mx-2">
+                <div class="flex m-2 justify-between align-center items-center mb-5">
+                    <span class="title"> Menu </span>
+                </div>
+                <div class="flex p-2 items-center hover:cursor-pointer group">
+                    <div class="flex flex-1 mr-4 border-b-1 group-hover:border-b-2"></div>
+                    <span class="font-bold">Exercices</span>
+                    <div class="flex flex-1 ml-4 border-b-1 group-hover:border-b-2"></div>
+                </div>
+                <div class="flex p-2 items-center hover:cursor-pointer group">
+                    <div class="flex flex-1 mr-4 border-b-1 group-hover:border-b-2"></div>
+                    <span class="font-bold">Séances</span>
+                    <div class="flex flex-1 ml-4 border-b-1 group-hover:border-b-2"></div>
+                </div>
+                <div class="flex p-2 items-center hover:cursor-pointer group">
+                    <div class="flex flex-1 mr-4 border-b-1 group-hover:border-b-2"></div>
+                    <span class="font-bold">Bibliographie</span>
+                    <div class="flex flex-1 ml-4 border-b-1 group-hover:border-b-2"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="text-xl">
+        <div class="flex justify-center mt-10">
+            <div class="flex flex-col gap-12 w-5xl place-content-center">
+
+                <div class="hidden w-full bg-red-100 card border-red-500 border-2">
+                    <div class="flex">
+                        <h4 class="title">Important</h4>
+                    </div>
+                    <div id="alert-message" class="m-5">
+                        Le cours perf est terminé, on se retrouve l'année prochaine !
+                    </div>
+                </div>
+
+                <div class="flex gap-12">
+                    <div class="w-xl bg-olive-100 card">
+                        <div class="flex">
+                            <h4 class="title">Présentation</h4>
+                        </div>
+                        <div class="m-5">
+                            <p class="text-justify">
+                                Bienvenue sur le site du cours perf.
+                                Vous trouverez ici les différentes séances réalisée au cours de l'année, des idées
+                                d'exercices et un peu de théorie.
+                                Bonne Lecture !
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex-1 bg-olive-100 card">
+                        <div class="flex">
+                            <h4 class="title">Liens utiles</h4>
+                        </div>
+                        <div class="flex flex-col m-5 justify-between">
+                            <div class="flex items-center justify-between my-2"><i
+                                    class="bi bi-calendar-week text-3xl"></i><span class="font-mono"><a
+                                        href="https://vertical-ouest-loisirs.fr">Site du club</a></span></div>
+                            <div class="flex items-center justify-between my-2"><i class="bi bi-cart text-3xl"></i><span
+                                    class="font-mono"><a href="https://github.com/Marsupilami1">Liste de cours'
+                                        perf</a></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <iframe src="https://embed.styledcalendar.com/#8RtfvC4SjLdbxLW1zaSr" title="Calendrier VOL"
+                    class="styled-calendar-container" data-cy="calendar-embed-iframe"></iframe>
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>
