@@ -3,4 +3,7 @@
 *.log
 tmp/
 
-templates/node_modules
+node_modules
+package-lock.json
+
+server/crow_all.h.pch
