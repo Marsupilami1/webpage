@@ -1,12 +1,11 @@
 #include "crow_all.h"
-#include <iostream>
 #include <string>
 
 
 auto main(int argc, char *argv[]) -> int {
-  std::cout << "Hello, World!" << std::endl;
-
   crow::SimpleApp app;
+
+  CROW_LOG_INFO << "Starting Server";
 
   crow::mustache::set_global_base("templates");
 

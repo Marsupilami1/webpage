@@ -11,33 +11,64 @@
     <link rel="icon" href="/static/favicon.png">
 </head>
 
-<body class="bg-white text-black font-display">
+<body class="bg-white dark:bg-mist-800 text-black dark:text-zinc-200 font-display">
     <header>
-        <div class="flex place-content-center items-center">
+        <div
+            class="flex flex-col md:flex-row gap-6 lg:gap-12 md:flex-row mt-10 md:m-10 justify-between lg:place-content-center items-center xl:ml-[calc(var(--container-2xs)+10*var(--spacing))] 2xl:ml-10">
             <img src="static/picture.png" alt="Picture not found"
-                class="w-40 h-40 m-5 mr-20 shadow-xl border-2 duration-300 ease-out hover:rounded-[calc(20*var(--spacing))] hover:scale-115" />
-            <div class="flex-col">
-                <h1 class="text-7xl font-bold">Martin Andrieux</h1>
-                <h2 class="text-3xl">PhD Student - University of Rennes</h2>
+                class="w-[80%] backdrop-grayscale lg:w-40 md:w-xs shadow-xl dark:shadow-none border-2 dark:border-zinc-200 duration-300 ease-out lg:hover:rounded-[calc(20*var(--spacing))] lg:hover:scale-115" />
+            <div class="">
+                <h1 class="text-center md:text-left text-5xl lg:text-7xl font-bold">Martin Andrieux</h1>
+                <h2 class="text-center md:text-left text-2xl lg:text-3xl md:text-3xl">PhD Student - University of Rennes
+                </h2>
             </div>
         </div>
 
-        <div class="fixed inset-y-0 left-0 bg-orange-200 w-xs shadow-lg text-xl">
+        <div id="menu-panel" class="hidden xl:hidden flex fixed inset-0 bg-black/60 h-screen justify-end">
+            <div class="w-[70%] right-0 h-full bg-orange-300 dark:bg-sky-900">
+            </div>
+        </div>
+        <div
+            class="hidden xl:flex flex-col pt-2 pb-10 gap-6 fixed inset-y-0 left-0 bg-orange-300 dark:bg-sky-900 w-2xs shadow-lg text-xl">
+            <div class="flex mx-2 justify-between align-center items-center mb-5">
+                <span class="title"> Menu </span>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <a href="/" class="font-bold">Home</a>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <span class="font-bold">Teaching</span>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <span class="font-bold">Climbing</span>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex flex-1"></div>
+        </div>
+        <!-- Burger button -->
+        <div id="burger-button"
+            class="xl:hidden flex fixed right-0 top-0 m-5 w-15 h-15 bg-orange-300 dark:bg-sky-900 items-center justify-center rounded-full shadow-lg group">
+            <i class="bi bi-list text-4xl duration-200 group-hover:rotate-90"></i>
         </div>
     </header>
 
     <main class="text-xl">
-        <div class="flex justify-center mt-10">
-            <div class="flex flex-col gap-12 w-5xl place-content-center">
-
-                <div class="flex gap-12">
-                    <div class="w-xl bg-olive-100 card">
+        <div class="flex justify-center m-10 xl:ml-[calc(var(--container-2xs)+10*var(--spacing))] 2xl:ml-10">
+            <div class="flex flex-col gap-4 md:gap-8 place-content-center items-center 2xl:w-5xl">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+                    <div class="w-full h-full bg-olive-100 dark:bg-mist-900 card">
                         <div class="flex">
                             <h4 class="title">About me</h4>
                         </div>
                         <div class="m-5">
                             <p class="text-justify">
-                                I am a PhD student in Computer Science at <a href="https://iria.fr">IRISA Rennes</a>
+                                I am a PhD student in Computer Science at <a class="inline-a"
+                                    href="https://iria.fr">IRISA Rennes</a>
                                 (France), where
                                 my research focuses on programming language theory and formal methods.
                                 Specifically, my work centers on effect systems, abstract machines, and semantics
@@ -45,48 +76,141 @@
                             </p>
                         </div>
                     </div>
-                    <div class="flex-1 bg-olive-100 card">
+                    <div class="w-full md:w-auto h-full bg-olive-100 dark:bg-mist-900 card self-start">
                         <div class="flex">
                             <h4 class="title">Useful Links</h4>
                         </div>
-                        <div class="flex flex-col m-5 justify-between">
-                            <div class="flex items-center justify-between my-2"><i
-                                    class="bi bi-envelope-at text-3xl"></i><span class="font-mono"><a
+                        <div class="flex flex-col h-full m-5 justify-around">
+                            <div class="flex gap-2 items-center justify-between my-2"><i
+                                                                                          class="bi bi-envelope-at text-3xl"></i>
+                                <div class="line-sep border-dashed md:hidden!"></div>
+                                <span class="font-mono"><a class="inline-a"
                                         href="mailto:martin.andrieux@inria.fr">martin·andrieux@inria·fr</a></span></div>
-                            <div class="flex items-center justify-between my-2"><i
-                                    class="bi bi-github text-3xl"></i><span class="font-mono"><a
+                            <div class="flex gap-2 items-center justify-between my-2"><i
+                                                                                          class="bi bi-github text-3xl"></i>
+                                <div class="line-sep border-dashed md:hidden!"></div>
+                                <span class="font-mono"><a class="inline-a"
                                         href="https://github.com/Marsupilami1">github.com/Marsupilami1</a></span></div>
-                            <div class="flex items-center justify-between my-2"><i
-                                    class="bi bi-file-earmark text-3xl"></i><span class="font-mono">cv in <a
-                                        href="static/cv_en.pdf">english</a> | <a href="static/cv_fr.pdf">french</a>
+                            <div class="flex gap-2 items-center justify-between my-2"><i
+                                                                                          class="bi bi-file-earmark text-3xl"></i>
+                                <div class="line-sep border-dashed md:hidden!"></div>
+                                <span class="font-mono">cv in <a
+                                        class="inline-a" href="static/cv_en.pdf">english</a> | <a class="inline-a"
+                                        href="static/cv_fr.pdf">french</a>
                                 </span></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-taupe-100 card">
+                <div class="w-full bg-taupe-100 dark:bg-mist-900 card">
                     <div class="flex">
                         <h4 class="title">Publications</h4>
                     </div>
                     <div class="grid gap-2 m-3 p-2">
-                        <ul class="flex flex-col gap-2 list-disc list-inside overflow-hidden">
-                            <li class="whitespace-nowrap truncate"><span class="font-bold">Algebraizing Higher-Order
-                                    Effects.</span>
-                                <span class="italic">M.Andrieux, A.Schmitt</span>
-                                <span class="">(JFLA26)</span>
-                            </li>
-                            <li class="whitespace-nowrap truncate"><span class="font-bold">Skeletal Semantics of a
-                                    Fragment of
-                                    Python.</span>
-                                <span class="italic">M.Andrieux, A.Schmitt</span>
-                                <span>(JFLA25)</span>
-                            </li>
-                            <li class="whitespace-nowrap truncate"><span class="font-bold">Active Objects Based on
-                                    Algebraic Effects.</span>
-                                <span class="italic">M.Andrieux, L.Henrio, G.Radanne</span>
-                                <span>(AOL24)</span>
-                            </li>
-                        </ul>
+                        <div class="flex flex-col gap-2 overflow-hidden">
+                            <details class="whitespace-nowrap truncate p-1">
+                                <summary class="hover:bg-taupe-200 hover:cursor-pointer">
+                                    <span class="font-bold">Algebraizing Higher-Order Effects.</span>
+                                    <span class="italic">M.Andrieux, A.Schmitt</span>
+                                    <span class="">(JFLA26)</span>
+                                </summary>
+                                <div class="paper">
+                                    <span class="font-bold md:text-2xl text-center">Algebraizing Higher-Order
+                                        Effects</span>
+                                    <span class="text-centerl">Martin Andrieux, Alan Schmitt</span>
+                                    <div class="flex flex-1">
+                                        <a class="inline-a text-center" href="https://hal.science/hal-05428145">https://hal.science/hal-05428145</a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="h-full text-justify text-wrap">
+                                            We present a technique for expressing higher-order effects as algebraic
+                                            ones.
+                                            Algebraic effects provide a clean and modular account of computational
+                                            effects,
+                                            but they exclude higher-order effects such as local or catch. The standard
+                                            representation of higher-order effects breaks the separation between syntax
+                                            and
+                                            interpretation that algebraic effects rely on. Our proposal, effect
+                                            algebraization, transforms higher-order effects into combinations of
+                                            algebraic
+                                            effects. Each higherorder effect is split into a pair of operations-Open and
+                                            Close-that together capture the same behavior using only algebraic
+                                            constructs.
+                                            The approach is illustrated on reader effects, ask and local. We also sketch
+                                            a
+                                            proof of semantics preservation: for every interpretation of the original
+                                            higher-order effects, there exists a corresponding interpretation of the
+                                            algebraized ones yielding the same result.
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="whitespace-nowrap truncate p-1">
+                                <summary class="hover:bg-taupe-200 hover:cursor-pointer">
+                                    <span class="font-bold">Skeletal Semantics of a
+                                        Fragment of
+                                        Python.</span>
+                                    <span class="italic">M.Andrieux, A.Schmitt</span>
+                                    <span>(JFLA25)</span>
+                                </summary>
+                                <div class="paper">
+                                    <span class="font-bold md:text-2xl text-center">Skeletal Semantics of a Fragment of
+                                        Python</span>
+                                    <span class="text-center">Martin Andrieux, Alan Schmitt</span>
+                                    <div class="flex flex-1">
+                                        <a class="inline-a text-center" href="https://inria.hal.science/hal-04406392">https://inria.hal.science/hal-04406392</a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="h-full text-justify text-wrap">
+                                            We present PySkel, a formalization of the semantics of a fragment of Python
+                                            in
+                                            Skel, a simple semantics description language. We describe a subset of the
+                                            Python
+                                            programming language including assignments, function calls, object oriented
+                                            features, and exceptions. This subset is large enough to include challenges
+                                            in the
+                                            formalization of Python such as the handling of scopes. This formalization
+                                            is
+                                            used to generate an OCaml interpreter that can be used to run Python
+                                            programs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                            <details class="whitespace-nowrap truncate p-1">
+                                <summary class="hover:bg-taupe-200 hover:cursor-pointer">
+                                    <span class="font-bold">Active Objects Based on
+                                        Algebraic Effects.</span>
+                                    <span class="italic">M.Andrieux, L.Henrio, G.Radanne</span>
+                                    <span>(AOL24)</span>
+                                </summary>
+                                <div class="paper">
+                                    <span class="font-bold md:text-2xl text-center">Active Objects Based on Algebraic
+                                        Effects
+                                    </span>
+                                    <span class="text-center">Martin Andrieux, Ludovic Henrio, Gabriel Radanne</span>
+                                    <div class="flex flex-1">
+                                        <a class="inline-a text-center" href="https://doi.org/10.1007/978-3-031-51060-1_1">https://doi.org/10.1007/978-3-031-51060-1_1</a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="h-full text-justify text-wrap">
+                                            Algebraic effects are a long-studied programming language construct allowing
+                                            the implementation of complex control flow in a structured way. With OCaml
+                                            5, such features are finally available in a mainstream programming language,
+                                            giving us a great opportunity to experiment with varied concurrency
+                                            constructs implemented as simple libraries. In this article, we explore how
+                                            to implement concurrency features such as futures and active objects using
+                                            algebraic effects, both in theory and in practice. On the practical side, we
+                                            present a library of active objects implemented in OCaml, with futures,
+                                            cooperative scheduling of active objects, and thread-level parallelism. On
+                                            the theoretical side, we formalise the compilation of a future calculus that
+                                            models our library into an effect calculus similar to the primitives
+                                            available in OCaml; we then prove the correctness of the compilation scheme.
+                                        </p>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+usage () {
+    cat << EOF
+usage: $0 [-d]
+
+This script starts the server.
+
+OPTIONS:
+  -h    Show this message
+  -d    Start in dev mode (with css generation on)
+  -p    Start in production mode
+  -b    Build the server
+EOF
+}
+
+
+while getopts "hdpb" OPTION
+do
+    case $OPTION in
+        h) usage
+           exit;;
+        d) server/main &
+           npx @tailwindcss/cli -i static/style_config.css -o static/style.css --watch;;
+        p) server/main;;
+        b) make -C server
+           exit;;
+        ?) exit 1;;
+    esac
+done
+    
+
