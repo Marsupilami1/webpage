@@ -83,3 +83,16 @@
         color: white;
     }
 }
+
+#menu-panel {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: --alpha(black / 60%);
+    height: 100vh;
+    justify-content: flex-end;
+    
+    @media (width >= 80rem) {
+        display: none;
+    }
+}

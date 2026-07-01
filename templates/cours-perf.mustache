@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Webpage">
-    <title>Martin Andrieux</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
-</head>
+{{> header.mustache }}
 
 <body class="bg-taupe-50 text-black font-display">
     <header>
@@ -20,6 +9,16 @@
                 <h1 class="text-7xl font-bold">Cours Perf VOL</h1>
                 <h2 class="text-3xl">Quelques resources pour progreser</h2>
             </div>
+        </div>
+
+        <div id="menu-panel">
+            <div class="w-[70%] right-0 h-full bg-orange-300 dark:bg-sky-900">
+            </div>
+        </div>
+        <!-- Burger button -->
+        <div id="burger-button"
+            class="xl:hidden flex fixed right-0 top-0 m-5 w-15 h-15 bg-orange-300 dark:bg-sky-900 items-center justify-center rounded-full shadow-lg group">
+            <i class="bi bi-list text-4xl duration-200 group-hover:rotate-90"></i>
         </div>
 
         <div class="fixed inset-y-0 left-0 bg-orange-100 w-xs shadow-lg text-xl">
@@ -96,4 +95,4 @@
     </main>
 </body>
 
-</html>
+{{> footer.mustache }}

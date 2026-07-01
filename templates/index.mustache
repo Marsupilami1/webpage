@@ -1,0 +1,133 @@
+{{> header.mustache }}
+
+<body class="bg-white dark:bg-mist-800 text-black dark:text-zinc-200 font-display">
+    <header>
+        <div
+            class="flex flex-col md:flex-row gap-6 lg:gap-12 md:flex-row mt-10 md:m-10 justify-between lg:place-content-center items-center xl:ml-[calc(var(--container-2xs)+10*var(--spacing))] 2xl:ml-10">
+            <img src="static/picture.png" alt="Picture not found"
+                class="w-[80%] backdrop-grayscale lg:w-40 md:w-xs shadow-xl dark:shadow-none border-2 dark:border-zinc-200 duration-300 ease-out lg:hover:rounded-[calc(20*var(--spacing))] lg:hover:scale-115" />
+            <div class="">
+                <h1 class="text-center md:text-left text-3xl md:text-5xl lg:text-7xl font-bold">Martin Andrieux</h1>
+                <h2 class="text-center md:text-left text-lg md:text-2xl lg:text-3xl md:text-3xl">PhD Student - University of Rennes
+                </h2>
+            </div>
+        </div>
+
+        <div id="menu-panel">
+            <div class="w-[70%] right-0 h-full bg-orange-300 dark:bg-sky-900">
+            </div>
+        </div>
+        <!-- Burger button -->
+        <div id="burger-button"
+            class="xl:hidden flex fixed right-0 top-0 m-5 w-15 h-15 bg-orange-300 dark:bg-sky-900 items-center justify-center rounded-full shadow-lg group">
+            <i class="bi bi-list text-4xl duration-200 group-hover:rotate-90"></i>
+        </div>
+
+        <div
+            class="hidden xl:flex flex-col pt-2 pb-10 gap-6 fixed inset-y-0 left-0 bg-orange-300 dark:bg-sky-900 w-2xs shadow-lg text-xl">
+            <div class="flex mx-2 justify-between align-center items-center mb-5">
+                <span class="title"> Menu </span>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <a href="/" class="font-bold">Home</a>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <span class="font-bold">Teaching</span>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <span class="font-bold">Climbing</span>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex items-center hover:cursor-pointer group">
+                <div class="line-sep"></div>
+                <a href="https://dj.mandrieux.fr" class="font-bold">Jukebox</a>
+                <div class="line-sep"></div>
+            </div>
+            <div class="flex flex-1"></div>
+        </div>
+    </header>
+
+    <main class="text-base md:text-xl">
+        <div class="flex justify-center m-10 xl:ml-[calc(var(--container-2xs)+10*var(--spacing))] 2xl:ml-10">
+            <div class="flex flex-col gap-4 md:gap-8 place-content-center items-center 2xl:w-5xl">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
+
+                    <div class="md:w-full h-full bg-olive-100 dark:bg-mist-900 card">
+                        <div class="flex">
+                            <h4 class="title">About me</h4>
+                        </div>
+                        <div class="m-5">
+                            <p class="text-justify">
+                                I am a PhD student in Computer Science at <a class="inline-a"
+                                    href="https://iria.fr">IRISA Rennes</a>
+                                (France), where
+                                my research focuses on programming language theory and formal methods.
+                                Specifically, my work centers on effect systems, abstract machines, and semantics
+                                transformations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-auto h-full bg-olive-100 dark:bg-mist-900 card self-start">
+                        <div class="flex">
+                            <h4 class="title">Useful Links</h4>
+                        </div>
+                        <div class="flex flex-col h-full m-5 justify-around">
+                            <div class="flex gap-2 items-center justify-between my-2"><i
+                                                                                          class="bi bi-envelope-at text-2xl md:text-3xl"></i>
+                                <span class="font-mono"><a class="inline-a"
+                                        href="mailto:martin.andrieux@inria.fr">martin·andrieux@inria·fr</a></span></div>
+                            <div class="flex gap-2 items-center justify-between my-2"><i
+                                                                                          class="bi bi-github text-2xl md:text-3xl"></i>
+                                <span class="font-mono"><a class="inline-a"
+                                        href="https://github.com/Marsupilami1">github.com/Marsupilami1</a></span></div>
+                            <div class="flex gap-2 items-center justify-between my-2"><i
+                                                                                          class="bi bi-file-earmark text-2xl md:text-3xl"></i>
+                                <span class="font-mono">cv in <a
+                                        class="inline-a" href="static/cv_en.pdf">english</a> | <a class="inline-a"
+                                        href="static/cv_fr.pdf">french</a>
+                                </span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full bg-taupe-100 dark:bg-mist-900 card">
+                    <div class="flex">
+                        <h4 class="title">Publications</h4>
+                    </div>
+                    <div class="grid gap-2 m-3 p-2">
+                        <div class="flex flex-col gap-2 overflow-hidden">
+                            {{#articles}}
+                            <details class="whitespace-nowrap truncate p-1">
+                                <summary class="hover:bg-taupe-200 dark:hover:bg-mist-700 hover:cursor-pointer p-1">
+                                    <span class="font-bold">{{title}}.</span>
+                                    <span class="italic">{{short_authors}}</span>
+                                    <span class="">({{conference}})</span>
+                                </summary>
+                                <div class="paper">
+                                    <span class="font-bold md:text-2xl text-center">{{title}}</span>
+                                    <span class="text-centerl">{{authors}}</span>
+                                    <div class="flex flex-1">
+                                        <a class="inline-a text-center" href="{{url}}">{{url}}</a>
+                                    </div>
+                                    <div class="mt-2">
+                                        <p class="h-full text-justify text-wrap">{{abstract}}</p>
+                                    </div>
+                                </div>
+                            </details>
+                            {{/articles}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+
+{{> footer.mustache }}

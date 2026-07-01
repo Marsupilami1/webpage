@@ -1,0 +1,18 @@
+2026
+Algebraizing Higher-Order Effects
+M.Andrieux, A.Schmitt
+Martin Andrieux, Alan Schmitt
+JFLA26
+https://hal.science/hal-05428145
+We present a technique for expressing higher-order effects as algebraic ones.
+Algebraic effects provide a clean and modular account of computational effects,
+but they exclude higher-order effects such as local or catch. The standard
+representation of higher-order effects breaks the separation between syntax and
+interpretation that algebraic effects rely on. Our proposal, effect
+algebraization, transforms higher-order effects into combinations of algebraic
+effects. Each higherorder effect is split into a pair of operations-Open and
+Close-that together capture the same behavior using only algebraic constructs.
+The approach is illustrated on reader effects, ask and local. We also sketch a
+proof of semantics preservation: for every interpretation of the original
+higher-order effects, there exists a corresponding interpretation of the
+algebraized ones yielding the same result.
