@@ -1,0 +1,17 @@
+<details class="whitespace-nowrap truncate p-1">
+    <summary class="hover:bg-taupe-200 dark:hover:bg-mist-700 hover:cursor-pointer p-1">
+        <span class="font-bold">{{title}}.</span>
+        <span class="italic">{{short_authors}}</span>
+        <span class="">({{conference}})</span>
+    </summary>
+    <div class="paper">
+        <span class="font-bold md:text-2xl text-center">{{title}}</span>
+        <span class="text-centerl">{{authors}}</span>
+        <div class="flex flex-1">
+            <a class="inline-a text-center" href="{{url}}">{{url}}</a>
+        </div>
+        <div class="mt-2">
+            <p class="h-full text-justify text-wrap">{{{slot}}}</p>
+        </div>
+    </div>
+</details>

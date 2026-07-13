@@ -1,12 +1,9 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Webpage">
-    <title>Martin Andrieux</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" href="/static/favicon.png">
-</head>
+<div
+	class="flex flex-col md:flex-row gap-6 lg:gap-12 md:flex-row mt-10 md:m-10 justify-between lg:place-content-center items-center xl:ml-[calc(var(--container-2xs)+10*var(--spacing))] 2xl:ml-10">
+	<img src="{{image}}" alt="Image not found"
+		 class="w-[80%] backdrop-grayscale lg:w-40 md:w-xs shadow-xl dark:shadow-none border-2 dark:border-zinc-200 duration-300 ease-out lg:hover:rounded-[calc(20*var(--spacing))] lg:hover:scale-115" />
+	<div class="">
+		<h1 class="text-center md:text-left text-3xl md:text-5xl lg:text-7xl font-bold">{{title}}</h1>
+		<h2 class="text-center md:text-left text-lg md:text-2xl lg:text-3xl md:text-3xl">{{subtitle}} </h2>
+	</div>
+</div>
