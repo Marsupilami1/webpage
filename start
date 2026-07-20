@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+API_KEY=$(cat api-key.txt)
+
 usage () {
     cat << EOF
 usage: $0 [-d]
