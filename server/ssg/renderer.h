@@ -24,6 +24,7 @@ class Renderer : public Parser {
 
     void Load(const std::string_view &src) override;
 
+    void ClearComponents();
     void AddComponent(const std::string &name,
                       const std::shared_ptr<crow::mustache::template_t> &temp);
 
