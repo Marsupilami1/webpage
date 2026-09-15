@@ -115,7 +115,6 @@ void BuildStaticPages(ssg::Renderer &renderer) {
   LoadSsgComponents(renderer);
 
   CROW_LOG_INFO << "Compiling index";
-
   {
     auto index = LoadFile("templates/index.html");
     renderer.Load(index);
@@ -130,6 +129,24 @@ void BuildStaticPages(ssg::Renderer &renderer) {
     renderer.Load(cours_perf);
     renderer.Run();
     std::ofstream f(build_tmp_path / "cours-perf.html");
+    f << renderer.Result();
+  }
+
+  CROW_LOG_INFO << "Compiling cours-perf-biblio";
+  {
+    auto cours_perf = LoadFile("templates/cours-perf-biblio.html");
+    renderer.Load(cours_perf);
+    renderer.Run();
+    std::ofstream f(build_tmp_path / "cours-perf-biblio.html");
+    f << renderer.Result();
+  }
+
+  CROW_LOG_INFO << "Compiling cours-perf-seances";
+  {
+    auto cours_perf = LoadFile("templates/cours-perf-seances.html");
+    renderer.Load(cours_perf);
+    renderer.Run();
+    std::ofstream f(build_tmp_path / "cours-perf-seances.html");
     f << renderer.Result();
   }
 
@@ -174,6 +191,16 @@ auto main(int argc, char *argv[]) -> int {
 
   CROW_ROUTE(app, "/cours-perf")([](crow::response &res) {
     res.set_static_file_info("dist/cours-perf.html");
+    res.end();
+  });
+
+  CROW_ROUTE(app, "/cours-perf/biblio")([](crow::response &res) {
+    res.set_static_file_info("dist/cours-perf-biblio.html");
+    res.end();
+  });
+
+  CROW_ROUTE(app, "/cours-perf/seances")([](crow::response &res) {
+    res.set_static_file_info("dist/cours-perf-seances.html");
     res.end();
   });
 
